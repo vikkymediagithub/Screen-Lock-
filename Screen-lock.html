@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>SCREEN LOCK</title>
+        <link rel="stylesheet" href="Screen-lock.css" />
+    </head>
+    <body>
+    <!---Input pin--->
+    <div id="top">
+        <span id="a1">*</span>
+        &nbsp;&nbsp;&nbsp;
+        <span id="a2">*</span>
+        &nbsp;&nbsp;&nbsp;
+        <span id="a3">*</span>
+        &nbsp;&nbsp;&nbsp;
+        <span id="a4">*</span>
+    </div>
+    <input type="hidden" maxlength="4" id="result">
+        <table border="0">
+            <tbody><tr onclick="change()">
+                <td><button onclick="dis('1')"><a onclick="vibrate()">1</a></button></td>
+                <td><button onclick="dis('2')"><a onclick="vibrate()">2</a></button></td>
+                <td><button onclick="dis('3')"><a onclick="vibrate()">3</a></button></td>
+            </tr>
+            <tr onclick="change()">
+                <td><button onclick="dis('4')"><a onclick="vibrate()">4</a></button></td>
+                <td><button onclick="dis('5')"><a onclick="vibrate()">5</a></button></td>
+                <td><button onclick="dis('6')"><a onclick="vibrate()">6</a></button></td>
+            </tr>
+            <tr onclick="change()">
+            <td><button onclick="dis('7')"><a onclick="vibrate()">7</a></button></td>
+            <td><button onclick="dis('8')"><a onclick="vibrate()">8</a></button></td>
+            <td><button onclick="dis('9')"><a onclick="vibrate()">9</a></button></td>
+            </tr>
+            <tr>
+          <td>
+    
+<button onclick="dis('0'); change();"><a onclick="vibrate()">0</a></button>
+
+</td><td>
+
+<button onclick="solve()" id="spn"><a onclick="vibrate()">OPEN</a></button>
+
+    </td>
+            <td></td>
+            </tr>
+        </tbody></table>
+        
+        <div id="bottom">
+        
+<h1>THANKS</h1>
+
+<p> CSS Animation BY VIKKYJAY</p>
+        </div>
+        <script type="text/javascript">
+          alert ("Pin Code Is : 5656")
+
+function dis(val)
+
+{ document.getElementById("result").value += val }
+
+function solve() {
+
+    let x = document.getElementById("result").value
+
+    let y = eval(x)
+
+    document.getElementById("result").value = y
+
+    if (y == "5656") {
+        h = document.getElementById("bottom")
+        h.style.display = "block"
+    } else {
+        alert("Incorrect Password")
+        document.getElementById("result").value = ""
+
+        document.getElementById("a1").style.color = "#fff"
+        document.getElementById("a2").style.color = "#fff"
+        document.getElementById("a3").style.color = "#fff"
+        document.getElementById("a4").style.color = "#fff" } }
+function change() {""
+
+let m = document.getElementById("result").value
+
+    if (m <= 9) {
+        n = document.getElementById("a1")
+        n.style.color = "yellow"
+    } else if (m <= 99) {
+        document.getElementById("a2").style.color = "yellow"
+    } else if (m <= 999) {
+        document.getElementById("a3").style.color = "yellow"
+    } else {
+        document.getElementById("a4").style.color = "yellow"
+} }
+
+function vibrate() {
+    navigator.vibrate(50);
+}
+        </script>
+    </body>
+</html>
